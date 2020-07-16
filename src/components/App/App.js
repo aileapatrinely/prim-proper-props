@@ -7,16 +7,13 @@ import DinnerSupplies from '../DinnerSupplies/DinnerSupplies';
 import GuestForm from '../GuestForm/GuestForm';
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      guestList: [],
-      newGuest: {
-        name: '',
-        kidsMeal: 'no',
-      },
-    };
-  }
+  state = {
+    guestList: [],
+    newGuest: {
+      name: '',
+      kidsMeal: 'no',
+    },
+  };
 
   handleChangeFor = (propertyName) => (event) => {
     this.setState({
