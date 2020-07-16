@@ -1,15 +1,20 @@
 import React, { Component } from 'react';
 import './App.css';
 import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
+import GuestList from '../GuestList/GuestList';
 
 class App extends Component {
-  state = {
-    guestList: [],
-    newGuest: {
-      name: '',
-      kidsMeal: 'no',
-    },
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      guestList: [],
+      newGuest: {
+        name: '',
+        kidsMeal: 'no',
+      },
+    };
+  }
 
   handleChangeFor = (propertyName) => (event) => {
     this.setState({
@@ -74,7 +79,8 @@ class App extends Component {
           </div>
           <button type="submit">Add Guest</button>
         </form>
-        <h2>Guest List</h2>
+        <GuestList />
+        {/* <h2>Guest List</h2>
         <table>
           <thead>
             <tr>
@@ -90,15 +96,12 @@ class App extends Component {
               </tr>
             ))}
           </tbody>
-        </table>
+        </table> */}
         <h2>Dinner Supplies</h2>
         <div>Spoons: {this.state.guestList.length * 2}</div>
         <div>Forks: {this.state.guestList.length * 2}</div>
         <div>Knives: {this.state.guestList.length * 2}</div>
-        <footer>
-          <h3>Have fun!</h3>
-          <p>Don't forget to mind your Ps and Qs!</p>
-        </footer>
+        <Footer />
       </div>
     );
   }
