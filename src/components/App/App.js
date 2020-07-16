@@ -4,6 +4,7 @@ import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import GuestList from '../GuestList/GuestList';
 import DinnerSupplies from '../DinnerSupplies/DinnerSupplies';
+import GuestForm from '../GuestForm/GuestForm';
 
 class App extends Component {
   constructor(props) {
@@ -48,7 +49,12 @@ class App extends Component {
         <h2>Party Leader</h2>
         {this.state.guestList[0] && <h3>{this.state.guestList[0].name}</h3>}
         <h2>Add a new guest</h2>
-        <form onSubmit={this.handleSubmit}>
+        <GuestForm
+          newGuest={this.state.newGuest}
+          handleChangeFor={this.handleChangeFor}
+          handleSubmit={this.handleSubmit}
+        />
+        {/* <form onSubmit={this.handleSubmit}>
           <label>Name</label>
           <input
             type="text"
@@ -79,7 +85,7 @@ class App extends Component {
             </div>
           </div>
           <button type="submit">Add Guest</button>
-        </form>
+        </form> */}
         <GuestList guests={this.state.guestList} />
         {/* <h2>Guest List</h2>
         <table>

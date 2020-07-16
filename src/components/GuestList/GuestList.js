@@ -1,14 +1,6 @@
 import React, { Component } from 'react';
 
 class GuestList extends Component {
-  state = {
-    guestList: [],
-    newGuest: {
-      name: '',
-      kidsMeal: 'no',
-    },
-  };
-
   render() {
     return (
       <div>
@@ -21,7 +13,7 @@ class GuestList extends Component {
             </tr>
           </thead>
           <tbody>
-            {this.state.guestList.map((guest) => (
+            {this.props.guests.map((guest) => (
               <tr key={guest.name}>
                 <td>{guest.name}</td>
                 <td>{guest.kidsMeal}</td>
