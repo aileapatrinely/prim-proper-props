@@ -3,6 +3,7 @@ import './App.css';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import GuestList from '../GuestList/GuestList';
+import DinnerSupplies from '../DinnerSupplies/DinnerSupplies';
 
 class App extends Component {
   constructor(props) {
@@ -79,7 +80,7 @@ class App extends Component {
           </div>
           <button type="submit">Add Guest</button>
         </form>
-        <GuestList />
+        <GuestList guests={this.state.guestList} />
         {/* <h2>Guest List</h2>
         <table>
           <thead>
@@ -97,10 +98,11 @@ class App extends Component {
             ))}
           </tbody>
         </table> */}
-        <h2>Dinner Supplies</h2>
+        <DinnerSupplies count={this.state.guestList.length} />
+        {/* <h2>Dinner Supplies</h2>
         <div>Spoons: {this.state.guestList.length * 2}</div>
         <div>Forks: {this.state.guestList.length * 2}</div>
-        <div>Knives: {this.state.guestList.length * 2}</div>
+        <div>Knives: {this.state.guestList.length * 2}</div> */}
         <Footer />
       </div>
     );
